@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import MortgageForm from "./components/MortgageForm";
+import MortgageSummary from "./components/MortgageSummary";
 
 function App() {
+  const [summary, setSummary] = useState({
+    termperiod: 0,
+    permonth: 0,
+    total: 0,
+    mortgageamount: 0,
+  });
+
+  const executeSummary = (value) => {
+    setSummary(value);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MortgageForm executeSummary={executeSummary} />
+      <MortgageSummary summary={summary} />
     </div>
   );
 }

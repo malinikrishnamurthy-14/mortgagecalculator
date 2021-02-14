@@ -1,38 +1,102 @@
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+.form-container {
+  width: 50%;
+  margin-top: 50px;
+  margin-left: 50px;
+  padding-left: 25px;
+  padding-bottom: 25px;
+  border: 1px solid #2b69b1;
+}
+.summary-container {
+  width: 40%;
+  margin-top: 50px;
+  margin-right: 50px;
+  padding-left: 25px;
+  padding-bottom: 25px;
+  border: 1px solid #2b69b1;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.form-element-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.form-element-child {
+  display: flex;
+  flex-direction: row;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.calculate-button {
+  color: whitesmoke;
+  letter-spacing: 1px;
+  font-style: bold;
+  background-color: #2b69b1;
+  border-radius: 5px;
+  padding: 10px;
+  border: none;
+  width: 100px;
+}
+
+.show-info {
+  display: block;
+  width: 68%;
+  overflow: auto;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #e9f1fb;
+  border-left: 5px solid #2b69b1;
+  border-radius: 5px;
+}
+
+.hide-info {
+  display: none;
+}
+
+.label-container {
+  width: 30%;
+}
+
+.info-image {
+  width: 3%;
+  height: 3%;
+  padding-right: 5px;
+}
+
+.info-text {
+  text-align: left;
+}
+
+.close-button {
+  float: right;
+  color: whitesmoke;
+  letter-spacing: 1px;
+  background-color: #2b69b1;
+  border-radius: 5px;
+  padding: 6.25px;
+  border: none;
+}
+
+.input {
+  width: 40%;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.dropdown {
+  width: 42%;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.summary-point {
+  padding: 10px;
 }
