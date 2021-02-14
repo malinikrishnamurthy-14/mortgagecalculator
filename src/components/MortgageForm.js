@@ -37,7 +37,7 @@ const MortgageForm = ({ executeSummary }) => {
   const renderInput = (field) => {
     return (
       <input
-        data-testid={`input-${field.fname}`}
+        data-testid={`${field.fname}-input`}
         type="text"
         className="input"
         value={data[field.id].value}
@@ -49,7 +49,7 @@ const MortgageForm = ({ executeSummary }) => {
   const renderDropDown = (field) => {
     return (
       <select
-        data-testid={`dropdown-${field.fname}`}
+        data-testid={`${field.fname}-dropdown`}
         className="dropdown"
         value={data[field.id].value}
         onChange={(event) => onValueChange(field.fname, event.target.value)}
@@ -76,7 +76,9 @@ const MortgageForm = ({ executeSummary }) => {
 
     if (mortgageamount > 0 && interestrate > 0) {
       const termperiod = term === 0 ? 12 : term.charAt[0] * 12;
-      const total = parseInt(mortgageamount) + parseInt((mortgageamount * interestrate) / 100);
+      const total =
+        parseInt(mortgageamount) +
+        parseInt((mortgageamount * interestrate) / 100);
       const permonth = total / termperiod;
       executeSummary({
         termperiod: termperiod,
@@ -87,7 +89,11 @@ const MortgageForm = ({ executeSummary }) => {
     }
   };
   return (
-    <form className="form-container" onSubmit={(event) => calculate(event)}>
+    <form
+      data-testid="form-container"
+      className="form-container"
+      onSubmit={(event) => calculate(event)}
+    >
       <h1>Mortgage Calculator</h1>
       {data.map((field, key) => {
         const fieldMeta = Fields.find((item) => item.fname === field.fname);
